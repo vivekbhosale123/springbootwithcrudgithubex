@@ -65,4 +65,9 @@ public class EmployeeController {
         return ResponseEntity.ok(employeeService.findAll().stream().sorted(Comparator.comparing(Employee::getEmpName)).toList());
     }
 
+    @GetMapping("/sortbysalary")
+    public ResponseEntity<List<Employee>> sortBySalary() {
+        return ResponseEntity.ok(employeeService.findAll().stream().sorted(Comparator.comparing(Employee::getEmpSalary)).toList());
+    }
+
 }
